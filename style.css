@@ -32,12 +32,12 @@ Reset css
     border-radius: 4px;
   }
 
-  .input-control {
+  .inputControl {
     display: flex;
     flex-direction: column;
   }
 
-  .input-control input {
+  .inputControl input {
     border: 2px solid #f0f0f0;
     border-radius: 4px;
     display: block;
@@ -46,11 +46,11 @@ Reset css
 
   }
 
-  .input-control input:focus {
+  .inputControl input:focus {
     outline: 0;
   }
 
-  .input-control.success input {
+  .inputControl.success input {
     /* border-color: #09c372; */
   }
 
@@ -58,7 +58,7 @@ Reset css
     border-color: #ff3860;
   }
 
-  .input-control .error {
+  .inputControl .error {
     color: #ff3860;
     font-size: 9px;
     height: 13px;
