@@ -5,11 +5,12 @@ import {
   validatePasswordConfirm,
   validateInput,
 } from "./validate.js";
-export const form = document.getElementById("form");
-export const username = document.getElementById("username");
-export const email = document.getElementById("email");
-export const password = document.getElementById("password");
-export const passwordConfirm = document.getElementById("passwordConfirm");
+const form = document.getElementById("form");
+console.log('form',form)
+const username = document.getElementById("username");
+const email = document.getElementById("email");
+const password = document.getElementById("password");
+const passwordConfirm = document.getElementById("passwordConfirm");
 
 username.addEventListener("blur", () => validateUsername(username, "Username"));
 email.addEventListener("blur", () => validateEmail(email, "Email"));
@@ -34,7 +35,12 @@ const clearErrorOnInput = (element) => {
 
 form.addEventListener("submit", (e) => {
   e.preventDefault();
-  const isValidateInput = validateInput();
+  const isValidateInput = validateInput(
+    username,
+    email,
+    password,
+    passwordConfirm
+  );
   const data = {
     username: username.value,
     email: email.value,

@@ -1,5 +1,3 @@
-import { form, username, email, password, passwordConfirm } from "./main.js";
-
 const setError = (element, message) => {
   const inputControl = element.parentElement;
   const errorDisplay = inputControl.querySelector(".error");
@@ -112,16 +110,32 @@ export const validatePasswordConfirm = (element, elementConfirm, fieldName) => {
   }
 };
 
-export const validateInput = () => {
-  const isValidateUsername = validateUsername(username, "Username");
-  const isValidateEmail = validateEmail(email, "Email");
-  const isValidatePassword = validatePassword(password, "Password", 8, 32);
+export const validateInput = (
+  usernameElement,
+  emailElement,
+  passwordElement,
+  passwordConfirmElement
+) => {
+  const isValidateUsername = validateUsername(usernameElement, "Username");
+  const isValidateEmail = validateEmail(emailElement, "Email");
+  const isValidatePassword = validatePassword(
+    passwordElement,
+    "Password",
+    8,
+    32
+  );
   const isValidatePasswordConfirm = validatePasswordConfirm(
-    password,
-    passwordConfirm,
+    passwordElement,
+    passwordConfirmElement,
     "Password confirm"
   );
-  if (isValidateUsername && isValidateEmail && isValidatePassword && isValidatePasswordConfirm) {
+  if (
+    isValidateUsername &&
+    isValidateEmail &&
+    isValidatePassword &&
+    isValidatePasswordConfirm
+  ) {
+    console.log('test')
     return true;
   } else {
     return false;
